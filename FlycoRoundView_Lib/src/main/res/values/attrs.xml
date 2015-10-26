@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--&lt;!&ndash; 属性公用导致一个蛋疼的事,布局中没有自动提示&ndash;&gt;-->
+    <!--<declare-styleable name="RoundView">-->
+    <!--&lt;!&ndash; 圆角矩形背景色 &ndash;&gt;-->
+    <!--<attr name="rv_backgroundColor" format="color"/>-->
+    <!--&lt;!&ndash; 圆角矩形背景色press &ndash;&gt;-->
+    <!--<attr name="rv_backgroundPressColor" format="color"/>-->
+    <!--&lt;!&ndash; 圆角弧度,单位dp&ndash;&gt;-->
+    <!--<attr name="rv_cornerRadius" format="dimension"/>-->
+    <!--&lt;!&ndash; 圆角弧度,单位dp&ndash;&gt;-->
+    <!--<attr name="rv_strokeWidth" format="dimension"/>-->
+    <!--&lt;!&ndash; 圆角边框颜色&ndash;&gt;-->
+    <!--<attr name="rv_strokeColor" format="color"/>-->
+    <!--&lt;!&ndash; 圆角边框颜色press &ndash;&gt;-->
+    <!--<attr name="rv_strokePressColor" format="color"/>-->
+    <!--&lt;!&ndash; 文字颜色press&ndash;&gt;-->
+    <!--<attr name="rv_textPressColor" format="color"/>-->
+    <!--&lt;!&ndash; 圆角弧度是高度一半&ndash;&gt;-->
+    <!--<attr name="rv_isRadiusHalfHeight" format="boolean"/>-->
+    <!--&lt;!&ndash; 圆角矩形宽高相等,取较宽高中大值&ndash;&gt;-->
+    <!--<attr name="rv_isWidthHeightEqual" format="boolean"/>-->
+    <!--</declare-styleable>-->
+
+
+    <!-- 以下是重用attr的正确姿势,一切为了在布局中可以自动提示-->
+    <!-- 圆角矩形背景色 -->
+    <attr name="rv_backgroundColor" format="color"/>
+    <!-- 圆角矩形背景色press -->
+    <attr name="rv_backgroundPressColor" format="color"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="rv_cornerRadius" format="dimension"/>
+    <!-- 圆角弧度,单位dp-->
+    <attr name="rv_strokeWidth" format="dimension"/>
+    <!-- 圆角边框颜色-->
+    <attr name="rv_strokeColor" format="color"/>
+    <!-- 圆角边框颜色press -->
+    <attr name="rv_strokePressColor" format="color"/>
+    <!-- 文字颜色press-->
+    <attr name="rv_textPressColor" format="color"/>
+    <!-- 圆角弧度是高度一半-->
+    <attr name="rv_isRadiusHalfHeight" format="boolean"/>
+    <!-- 圆角矩形宽高相等,取较宽高中大值-->
+    <attr name="rv_isWidthHeightEqual" format="boolean"/>
+    <!-- 圆角弧度,单位dp,TopLeft-->
+    <attr name="rv_cornerRadius_TL" format="dimension"/>
+    <!-- 圆角弧度,单位dp,TopRight-->
+    <attr name="rv_cornerRadius_TR" format="dimension"/>
+    <!-- 圆角弧度,单位dp,BottomLeft-->
+    <attr name="rv_cornerRadius_BL" format="dimension"/>
+    <!-- 圆角弧度,单位dp,BottomRight-->
+    <attr name="rv_cornerRadius_BR" format="dimension"/>
+
+    <declare-styleable name="RoundTextView">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_textPressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundLinearLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundRelativeLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundFrameLayout">
+        <attr name="rv_backgroundColor"/>
+        <attr name="rv_backgroundPressColor"/>
+        <attr name="rv_cornerRadius"/>
+        <attr name="rv_strokeWidth"/>
+        <attr name="rv_strokeColor"/>
+        <attr name="rv_strokePressColor"/>
+        <attr name="rv_isRadiusHalfHeight"/>
+        <attr name="rv_isWidthHeightEqual"/>
+        <attr name="rv_cornerRadius_TL"/>
+        <attr name="rv_cornerRadius_TR"/>
+        <attr name="rv_cornerRadius_BL"/>
+        <attr name="rv_cornerRadius_BR"/>
+    </declare-styleable>
+</resources>
