@@ -27,15 +27,14 @@ public class RoundFrameLayout extends FrameLayout {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-        if (delegate.isWidthHeightEqual()) {
-            if (getWidth() > 0 && getHeight() > 0) {
-                int max = Math.max(getWidth(), getHeight());
-                setMeasuredDimension(max, max);
-                invalidate();
-            }
+        if (delegate.isWidthHeightEqual() && getWidth() > 0 && getHeight() > 0) {
+            int max = Math.max(getWidth(), getHeight());
+            int measureSpec = MeasureSpec.makeMeasureSpec(max, MeasureSpec.EXACTLY);
+            super.onMeasure(measureSpec, measureSpec);
+            return;
         }
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
     @Override

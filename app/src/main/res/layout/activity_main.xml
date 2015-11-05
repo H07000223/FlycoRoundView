@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingLeft="18dp"
                 android:paddingRight="18dp"
@@ -53,10 +54,12 @@
                 rv:rv_textPressColor="#ffffff"/>
         </LinearLayout>
 
+
         <com.flyco.roundview.RoundTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:gravity="center"
             android:paddingBottom="10dp"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
