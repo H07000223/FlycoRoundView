@@ -268,11 +268,11 @@ public class RoundViewDelegate {
     }
 
     protected void setOnClickListener(View.OnClickListener l) {
-        isClickSet = true;
+        isClickSet = view.isEnabled() && l != null;
     }
 
     protected void setOnLongClickListener(View.OnLongClickListener l) {
-        isClickSet = true;
+        isClickSet = view.isEnabled() && l != null;
     }
 
     protected int dp2px(float dp) {
