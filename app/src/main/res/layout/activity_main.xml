@@ -63,11 +63,9 @@
             android:paddingBottom="10dp"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
-            android:singleLine="true"
-            android:ellipsize="end"
             android:paddingTop="10dp"
             android:text="TextView Radius 10dp"
-            android:textColor="#ffffff"
+            android:textColor="#383838"
             rv:rv_backgroundColor="#F6CE59"
             rv:rv_cornerRadius="10dp"/>
 
