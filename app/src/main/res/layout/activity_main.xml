@@ -56,15 +56,17 @@
 
 
         <com.flyco.roundview.RoundTextView
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:ellipsize="end"
             android:gravity="center"
             android:paddingBottom="10dp"
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:paddingTop="10dp"
-            android:text="TextView Radius 10dp"
+            android:singleLine="true"
+            android:text="TextView Radius 10dpTextView Radius 10dp"
             android:textColor="#383838"
             rv:rv_backgroundColor="#F6CE59"
             rv:rv_cornerRadius="10dp"/>

@@ -43,7 +43,10 @@ public class RoundTextView extends TextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(getScrollX(), 0);
         delegate.onDraw(canvas);
+        canvas.restore();
         //super.onDraw after our draw
         super.onDraw(canvas);
     }
