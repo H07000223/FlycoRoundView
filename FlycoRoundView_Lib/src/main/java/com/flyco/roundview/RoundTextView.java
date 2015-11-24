@@ -42,30 +42,11 @@ public class RoundTextView extends TextView {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(getScrollX(), 0);
-        delegate.onDraw(canvas);
-        canvas.restore();
-        //super.onDraw after our draw
-        super.onDraw(canvas);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        delegate.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
-
-    @Override
-    public void setOnClickListener(OnClickListener l) {
-        delegate.setOnClickListener(l);
-        super.setOnClickListener(l);
-    }
-
-    @Override
-    public void setOnLongClickListener(OnLongClickListener l) {
-        delegate.setOnLongClickListener(l);
-        super.setOnLongClickListener(l);
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        if (delegate.isRadiusHalfHeight()) {
+            delegate.setCornerRadius(getHeight() / 2);
+        }
+        delegate.update();
     }
 }

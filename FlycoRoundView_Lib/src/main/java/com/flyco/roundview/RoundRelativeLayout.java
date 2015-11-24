@@ -39,27 +39,11 @@ public class RoundRelativeLayout extends RelativeLayout {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
-        delegate.onDraw(canvas);
-        //super.onDraw after our draw
-        super.onDraw(canvas);
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        delegate.onTouchEvent(event);
-        return super.onTouchEvent(event);
-    }
-
-    @Override
-    public void setOnClickListener(OnClickListener l) {
-        delegate.setOnClickListener(l);
-        super.setOnClickListener(l);
-    }
-
-    @Override
-    public void setOnLongClickListener(OnLongClickListener l) {
-        delegate.setOnLongClickListener(l);
-        super.setOnLongClickListener(l);
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+        if (delegate.isRadiusHalfHeight()) {
+            delegate.setCornerRadius(getHeight() / 2);
+        }
+        delegate.update();
     }
 }
