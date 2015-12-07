@@ -60,82 +60,69 @@ public class RoundViewDelegate {
         ta.recycle();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setBackgroundColor(int backgroundColor) {
+    public void setBackgroundColor(int backgroundColor) {
         this.backgroundColor = backgroundColor;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setBackgroundPressColor(int backgroundPressColor) {
+    public void setBackgroundPressColor(int backgroundPressColor) {
         this.backgroundPressColor = backgroundPressColor;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setCornerRadius(int cornerRadius) {
+    public void setCornerRadius(int cornerRadius) {
         this.cornerRadius = dp2px(cornerRadius);
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setStrokeWidth(int strokeWidth) {
+    public void setStrokeWidth(int strokeWidth) {
         this.strokeWidth = dp2px(strokeWidth);
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setStrokeColor(int strokeColor) {
+    public void setStrokeColor(int strokeColor) {
         this.strokeColor = strokeColor;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setStrokePressColor(int strokePressColor) {
+    public void setStrokePressColor(int strokePressColor) {
         this.strokePressColor = strokePressColor;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setTextPressColor(int textPressColor) {
+    public void setTextPressColor(int textPressColor) {
         this.textPressColor = textPressColor;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setIsRadiusHalfHeight(boolean isRadiusHalfHeight) {
+    public void setIsRadiusHalfHeight(boolean isRadiusHalfHeight) {
         this.isRadiusHalfHeight = isRadiusHalfHeight;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setIsWidthHeightEqual(boolean isWidthHeightEqual) {
+    public void setIsWidthHeightEqual(boolean isWidthHeightEqual) {
         this.isWidthHeightEqual = isWidthHeightEqual;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setCornerRadius_TL(int cornerRadius_TL) {
+    public void setCornerRadius_TL(int cornerRadius_TL) {
         this.cornerRadius_TL = cornerRadius_TL;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setCornerRadius_TR(int cornerRadius_TR) {
+    public void setCornerRadius_TR(int cornerRadius_TR) {
         this.cornerRadius_TR = cornerRadius_TR;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setCornerRadius_BL(int cornerRadius_BL) {
+    public void setCornerRadius_BL(int cornerRadius_BL) {
         this.cornerRadius_BL = cornerRadius_BL;
-        return this;
+        setBgSelector();
     }
 
-    /** 设置完属性,最后调用update方法更新 */
-    public RoundViewDelegate setCornerRadius_BR(int cornerRadius_BR) {
+    public void setCornerRadius_BR(int cornerRadius_BR) {
         this.cornerRadius_BR = cornerRadius_BR;
-        return this;
+        setBgSelector();
     }
 
     public int getBackgroundColor() {
@@ -188,11 +175,6 @@ public class RoundViewDelegate {
 
     public int getCornerRadius_BR() {
         return cornerRadius_BR;
-    }
-
-    /** 设置完属性,最后调用update方法更新 */
-    public void update() {
-        setBgSelector();
     }
 
     protected int dp2px(float dp) {

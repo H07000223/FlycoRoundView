@@ -40,7 +40,8 @@ public class RoundLinearLayout extends LinearLayout {
         super.onLayout(changed, left, top, right, bottom);
         if (delegate.isRadiusHalfHeight()) {
             delegate.setCornerRadius(getHeight() / 2);
+        }else {
+            delegate.setBgSelector();
         }
-        delegate.update();
     }
 }

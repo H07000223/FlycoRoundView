@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 RoundViewDelegate delegate = rtv_3.getDelegate();
                 delegate.setBackgroundColor(
                         delegate.getBackgroundColor() == Color.parseColor("#ffffff")
-                                ? Color.parseColor("#F6CE59") : Color.parseColor("#ffffff"))
-                        .update();
+                                ? Color.parseColor("#F6CE59") : Color.parseColor("#ffffff"));
             }
         });
     }
