@@ -1,11 +1,14 @@
 package com.flyco.roundview;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -33,6 +36,7 @@ public class RoundViewDelegate {
     private int textPressColor;
     private boolean isRadiusHalfHeight;
     private boolean isWidthHeightEqual;
+    private boolean isRippleEnable;
     private float[] radiusArr = new float[8];
 
     public RoundViewDelegate(View view, Context context, AttributeSet attrs) {
@@ -56,6 +60,7 @@ public class RoundViewDelegate {
         cornerRadius_TR = ta.getDimensionPixelSize(R.styleable.RoundTextView_rv_cornerRadius_TR, 0);
         cornerRadius_BL = ta.getDimensionPixelSize(R.styleable.RoundTextView_rv_cornerRadius_BL, 0);
         cornerRadius_BR = ta.getDimensionPixelSize(R.styleable.RoundTextView_rv_cornerRadius_BR, 0);
+        isRippleEnable = ta.getBoolean(R.styleable.RoundTextView_rv_isRippleEnable, true);
 
         ta.recycle();
     }
@@ -211,19 +216,26 @@ public class RoundViewDelegate {
     public void setBgSelector() {
         StateListDrawable bg = new StateListDrawable();
 
-        setDrawable(gd_background, backgroundColor, strokeColor);
-        bg.addState(new int[]{-android.R.attr.state_pressed}, gd_background);
-        if (backgroundPressColor != Integer.MAX_VALUE || strokePressColor != Integer.MAX_VALUE) {
-            setDrawable(gd_background_press, backgroundPressColor == Integer.MAX_VALUE ? backgroundColor : backgroundPressColor,
-                    strokePressColor == Integer.MAX_VALUE ? strokeColor : strokePressColor);
-            bg.addState(new int[]{android.R.attr.state_pressed}, gd_background_press);
-        }
-
-        if (Build.VERSION.SDK_INT >= 16) {
-            view.setBackground(bg);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && isRippleEnable) {
+            setDrawable(gd_background, backgroundColor, strokeColor);
+            RippleDrawable rippleDrawable = new RippleDrawable(
+                    getPressedColorSelector(backgroundColor, backgroundPressColor), gd_background, null);
+            view.setBackground(rippleDrawable);
         } else {
-            //noinspection deprecation
-            view.setBackgroundDrawable(bg);
+            setDrawable(gd_background, backgroundColor, strokeColor);
+            bg.addState(new int[]{-android.R.attr.state_pressed}, gd_background);
+            if (backgroundPressColor != Integer.MAX_VALUE || strokePressColor != Integer.MAX_VALUE) {
+                setDrawable(gd_background_press, backgroundPressColor == Integer.MAX_VALUE ? backgroundColor : backgroundPressColor,
+                        strokePressColor == Integer.MAX_VALUE ? strokeColor : strokePressColor);
+                bg.addState(new int[]{android.R.attr.state_pressed}, gd_background_press);
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {//16
+                view.setBackground(bg);
+            } else {
+                //noinspection deprecation
+                view.setBackgroundDrawable(bg);
+            }
         }
 
         if (view instanceof TextView) {
@@ -238,4 +250,21 @@ public class RoundViewDelegate {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    private ColorStateList getPressedColorSelector(int normalColor, int pressedColor) {
+        return new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{android.R.attr.state_focused},
+                        new int[]{android.R.attr.state_activated},
+                        new int[]{}
+                },
+                new int[]{
+                        pressedColor,
+                        pressedColor,
+                        pressedColor,
+                        normalColor
+                }
+        );
+    }
 }

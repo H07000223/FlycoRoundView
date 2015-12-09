@@ -48,6 +48,7 @@
                 rv:rv_backgroundColor="#ffffff"
                 rv:rv_backgroundPressColor="#03A9F4"
                 rv:rv_isRadiusHalfHeight="true"
+                rv:rv_isRippleEnable="false"
                 rv:rv_strokeColor="#03A9F4"
                 rv:rv_strokePressColor="#6D8FB0"
                 rv:rv_strokeWidth="1dp"

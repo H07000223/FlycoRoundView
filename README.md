@@ -8,7 +8,7 @@ A library helps Android built-in views easy and convenient to set round rectangl
 
 ```groovy
 dependencies{
-    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.2@aar'
+    compile 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
 }
 ```
 
@@ -29,4 +29,5 @@ dependencies{
 | rv_cornerRadius_TR | dimension | corner radius top right,unit dp
 | rv_cornerRadius_BL | dimension | corner radius bottom left,unit dp
 | rv_cornerRadius_BR | dimension | corner radius bottom right,unit dp
+| rv_isRippleEnable | boolean | is ripple effect enable for Api21+
 

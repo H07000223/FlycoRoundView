@@ -50,6 +50,8 @@
     <attr name="rv_cornerRadius_BL" format="dimension"/>
     <!-- 圆角弧度,单位dp,BottomRight-->
     <attr name="rv_cornerRadius_BR" format="dimension"/>
+    <!-- 是否有Ripple效果,api21+有效-->
+    <attr name="rv_isRippleEnable" format="boolean"/>
 
     <declare-styleable name="RoundTextView">
         <attr name="rv_backgroundColor"/>
@@ -65,6 +67,7 @@
         <attr name="rv_cornerRadius_TR"/>
         <attr name="rv_cornerRadius_BL"/>
         <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
     </declare-styleable>
 
     <declare-styleable name="RoundLinearLayout">
@@ -80,6 +83,7 @@
         <attr name="rv_cornerRadius_TR"/>
         <attr name="rv_cornerRadius_BL"/>
         <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
     </declare-styleable>
 
     <declare-styleable name="RoundRelativeLayout">
@@ -95,6 +99,7 @@
         <attr name="rv_cornerRadius_TR"/>
         <attr name="rv_cornerRadius_BL"/>
         <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
     </declare-styleable>
 
     <declare-styleable name="RoundFrameLayout">
@@ -110,5 +115,6 @@
         <attr name="rv_cornerRadius_TR"/>
         <attr name="rv_cornerRadius_BL"/>
         <attr name="rv_cornerRadius_BR"/>
+        <attr name="rv_isRippleEnable"/>
     </declare-styleable>
 </resources>
